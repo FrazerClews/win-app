@@ -4,6 +4,6 @@
 #include <string>
 
 void SetMsiHandle(MSIHANDLE msiHandle);
-void LogMessage(std::wstring message, int result);
+void LogMessage(const std::wstring& message, int result);
 void LogMessage(std::wstring message);
 std::wstring GetProperty(std::wstring name);

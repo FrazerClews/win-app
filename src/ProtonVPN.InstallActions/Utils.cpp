@@ -10,7 +10,7 @@ void SetMsiHandle(MSIHANDLE hInstall)
     msiHandle = hInstall;
 }
 
-void LogMessage(std::wstring message, int result)
+void LogMessage(const std::wstring& message, int result)
 {
     const MSIHANDLE hRecord = MsiCreateRecord(1);
     MsiRecordSetString(hRecord, 0, (message + std::to_wstring(result)).c_str());
@@ -18,7 +18,7 @@ void LogMessage(std::wstring message, int result)
     MsiCloseHandle(hRecord);
 }
 
-void LogMessage(std::wstring message)
+void LogMessage(std::wstring message) // TODO pass vale?
 {
     const MSIHANDLE hRecord = MsiCreateRecord(1);
     MsiRecordSetString(hRecord, 0, message.c_str());

@@ -76,7 +76,7 @@ int DeleteService(std::wstring serviceName)
     return 0;
 }
 
-int CreateDriverService(std::wstring serviceName, std::wstring displayName, std::wstring driverFile)
+int CreateDriverService(std::wstring serviceName, std::wstring displayName, const std::wstring& driverFile)
 {
     const auto absolutePath = L"\"\\??\\" + driverFile + L"\"";
     const auto kernelPath = L"\\??\\" + driverFile;
