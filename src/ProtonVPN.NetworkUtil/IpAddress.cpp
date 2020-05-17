@@ -2,11 +2,10 @@
 #include "IpAddress.h"
 #include <ip2string.h>
 
-IpAddress::IpAddress(PCWSTR address) : address(address)
+IpAddress::IpAddress(PCWSTR address) : address(address), pIPv4Address(0)
 {
     UINT16 port = 0;
     IN_ADDR v4Addr = {0};
-    pIPv4Address = 0;
     auto status = NO_ERROR;
 
     status = RtlIpv4StringToAddressEx(address, FALSE, &v4Addr, &port);
